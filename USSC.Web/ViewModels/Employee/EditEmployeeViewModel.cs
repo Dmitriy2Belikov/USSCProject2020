@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace USSC.Web.ViewModels.Employee
 {
@@ -39,6 +37,10 @@ namespace USSC.Web.ViewModels.Employee
 
         [Required(ErrorMessage = "Не указан мед. полис")]
         public string MedicalPolicy { get; set; }
+
+        [DataType(DataType.Currency)]
+        [Required(ErrorMessage = "Не указаны штрафные баллы")]
+        public int PenaltyPoints { get; set; }
 
         public IEnumerable<Select> Positions { get; set; }
 
